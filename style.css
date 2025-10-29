@@ -18,9 +18,10 @@ header {
   z-index: 99;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   text-align: center;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
+/* === LOGO === */
 #logo {
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
@@ -45,7 +46,7 @@ header {
   font-size: 1.8rem;
   color: #252525;
   cursor: pointer;
-  display: block;
+  display: block; /* <-- Visas på mobil */
 }
 
 /* === NAVIGATION === */
@@ -84,7 +85,7 @@ nav {
 
 /* === MAIN === */
 main {
-  margin-top: 110px;
+  margin-top: 120px;
   text-align: center;
   padding: 20px;
 }
@@ -114,22 +115,25 @@ main {
   transform: scale(1.2);
 }
 
-/* === DESKTOP === */
+/* === TABLET & DESKTOP === */
 @media screen and (min-width: 768px) {
+  /* Dölj burger-ikonen på större skärmar */
   .nav-toggle-label {
     display: none;
   }
 
+  /* Visa navigationsmenyn som rad */
   nav {
     display: block;
     box-shadow: none;
+    background: none;
+    margin-top: 15px;
   }
 
   #menu {
     display: flex;
     justify-content: center;
-    gap: 3em;
-    margin-top: 10px;
+    gap: 2.5em;
   }
 
   #menu li {
@@ -144,4 +148,3 @@ main {
     font-size: 2.4rem;
   }
 }
-
