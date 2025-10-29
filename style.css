@@ -17,8 +17,10 @@ header {
   width: 100%;
   z-index: 99;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  text-align: center;
-  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 /* === LOGO === */
@@ -28,10 +30,9 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #252525;
-  display: inline-block;
+  text-decoration: none;
   border-bottom: 4px solid #004aad;
-  margin: 0 auto;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
 }
 
 /* === BURGER MENU === */
@@ -40,22 +41,23 @@ header {
 }
 
 .nav-toggle-label {
-  position: absolute;
-  right: 20px;
-  top: 20px;
   font-size: 1.8rem;
   color: #252525;
   cursor: pointer;
-  display: block; /* <-- Visas på mobil */
+  display: block;
+  margin-left: auto;
 }
 
 /* === NAVIGATION === */
 nav {
-  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
   width: 100%;
-  text-align: center;
-  display: none;
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  display: none;
+  text-align: center;
 }
 
 #menu {
@@ -85,7 +87,7 @@ nav {
 
 /* === MAIN === */
 main {
-  margin-top: 120px;
+  margin-top: 90px;
   text-align: center;
   padding: 20px;
 }
@@ -117,23 +119,21 @@ main {
 
 /* === TABLET & DESKTOP === */
 @media screen and (min-width: 768px) {
-  /* Dölj burger-ikonen på större skärmar */
   .nav-toggle-label {
     display: none;
   }
 
-  /* Visa navigationsmenyn som rad */
   nav {
+    position: static;
     display: block;
     box-shadow: none;
     background: none;
-    margin-top: 15px;
+    width: auto;
   }
 
   #menu {
     display: flex;
-    justify-content: center;
-    gap: 2.5em;
+    gap: 2em;
   }
 
   #menu li {
@@ -144,7 +144,7 @@ main {
     border-bottom: 2px solid #004aad;
   }
 
-  #logo {
-    font-size: 2.4rem;
+  header {
+    justify-content: space-between;
   }
 }
