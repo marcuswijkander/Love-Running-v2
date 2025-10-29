@@ -15,26 +15,26 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 99;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 25px;
+  padding: 15px 25px;
 }
 
 /* === LOGO === */
 #logo {
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  color: #252525;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #252525;
   text-decoration: none;
   border-bottom: 4px solid #004aad;
-  padding-bottom: 4px;
+  padding-bottom: 5px;
 }
 
-/* === BURGER MENU === */
+/* === BURGER TOGGLE === */
 #nav-toggle {
   display: none;
 }
@@ -46,8 +46,12 @@ header {
   cursor: pointer;
 }
 
-/* === NAVIGATION === */
-nav ul {
+/* === NAV MENU === */
+nav {
+  background-color: transparent;
+}
+
+#menu {
   list-style: none;
   display: flex;
   gap: 2em;
@@ -55,13 +59,13 @@ nav ul {
   padding: 0;
 }
 
-nav a {
+#menu a {
   text-decoration: none;
   color: #252525;
   font-weight: bold;
 }
 
-nav a.active {
+#menu a.active {
   border-bottom: 2px solid #004aad;
 }
 
@@ -76,7 +80,7 @@ main {
 footer {
   background-color: #f5f5f5;
   padding: 20px 0;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 #social-networks {
@@ -85,8 +89,8 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 #social-networks i {
@@ -101,25 +105,28 @@ footer {
 
 /* === MOBILE === */
 @media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-  }
-
   .nav-toggle-label {
     display: block;
   }
 
   nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     display: none;
-    text-align: center;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
   }
 
-  nav ul {
+  #menu {
     flex-direction: column;
     padding: 1em 0;
+  }
+
+  #menu li {
+    margin: 0.5em 0;
   }
 
   #nav-toggle:checked + .nav-toggle-label + nav {
